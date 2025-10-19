@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree -L 2 -a /Users/sshekkizhar/work/blogs/overleaf/research-template)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

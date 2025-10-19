@@ -1,0 +1,200 @@
+
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+\usepackage[accepted]{icml2025}
+% \usepackage[accepted]{icml2025_arxiv} % arxiv
+%\usepackage[accepted]{icml2025} % if accepted
+%\usepackage{icml2025_anon} % submission
+
+
+\newcommand{\xhdr}[1]{{\noindent\bfseries #1}.}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{cuted}
+\usepackage{multicol}
+\usepackage{titling}
+\usepackage{manyfoot}
+\usepackage{verbatim}
+\usepackage{xspace}
+\usepackage{marginnote}
+\usepackage{xcolor}
+\usepackage[capitalize,noabbrev]{cleveref}
+
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=0.5pt] (char) {#1};}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\usepackage{tabularx}
+\usepackage{quoting}
+\newenvironment{ex}[1]
+ {%
+  \quoting[leftmargin=0.1cm,rightmargin=0.1cm]%
+  \noindent\textcolor{blue!75}{} \itshape\ignorespaces
+ }
+ {\endquoting}
+% ========================================
+% CUSTOM COMMANDS
+% ========================================
+
+% Common abbreviations - keep these, they're universally useful
+\newcommand{\ie}{\textit{i.e., }}
+\newcommand{\eg}{\textit{e.g., }}
+\newcommand{\etal}{\textit{et al.}}
+\newcommand{\st}{\textit{s.t. }}
+\newcommand{\etc}{\textit{etc.}}
+\newcommand{\wrt}{\textit{w.r.t. }}
+\newcommand{\cf}{\textit{cf. }}
+\newcommand{\aka}{\textit{aka. }}
+
+% Paper-specific commands - add your custom commands here
+% Example: \newcommand{\methodname}{\textsc{YourMethod}\xspace}
+% Example: \newcommand{\datasetname}{\texttt{YourDataset}\xspace}
+% Example: \newcommand{\accuracy}{95.3\%\xspace}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\usepackage{inconsolata} % Import modern font package
+\lstset{
+  basicstyle=\fontfamily{pcr}\selectfont\itshape\small, % Monospace + Italic + Small font
+  frame=tb,                   
+  breaklines=true,             
+  breakatwhitespace=false,     
+  linewidth=\linewidth,        
+  numbers=left,                
+  numberstyle=\tiny\color{gray}, 
+  xleftmargin=10pt,            
+  framexleftmargin=10pt,       
+  tabsize=4,                   
+  showstringspaces=false,      
+  keywordstyle=\color{blue}\bfseries,  
+  commentstyle=\color{gray},   
+  stringstyle=\color{red},     
+  aboveskip=10pt,              
+  belowskip=10pt               
+}
+\usepackage{pifont}
+\usepackage{xcolor}
+\setlist[itemize]{leftmargin=10pt, itemsep=0pt, topsep=0pt, parsep=0pt}
+
+\usepackage{pifont}
+\usepackage{fontawesome5}
+
+\definecolor{linkcolor}{rgb}{0.0, 0.0, 0.55} % dark blue
+%\definecolor{linkcolor}{rgb}{0.4, 0.0, 0.6} % dark purple
+
+\usepackage[textsize=tiny]{todonotes}
+
+% ========================================
+% PAPER TITLE AND AUTHORS
+% ========================================
+% Replace with your paper title and author information
+
+\icmltitlerunning{Your Short Title for Running Head}
+
+\begin{document}
+\onecolumn  % For ICML format
+\icmltitle{Your Paper Title Here: Replace with Your Actual Title}
+\vspace{-10pt}
+\begin{icmlauthorlist}
+% Add your authors here
+\icmlauthor{First Author}{inst1}
+\icmlauthor{Second Author}{inst2}
+\icmlauthor{Third Author}{inst1}\\
+% Add more authors as needed
+[0.1cm]
+% Optional: Add project website/links
+% \href{http://your-project-url.com}{\footnotesize {\textcolor{linkcolor}{\texttt{http://your-project-url.com}}}}
+\end{icmlauthorlist}
+
+% Define your institutions
+\icmlaffiliation{inst1}{First Institution Name}
+\icmlaffiliation{inst2}{Second Institution Name}
+% Add more institutions as needed
+
+% Corresponding author(s)
+\icmlcorrespondingauthor{First Author}{first.author@institution.edu}
+% \icmlcorrespondingauthor{Second Author}{second.author@institution.edu}
+
+\icmlkeywords{Machine Learning, Deep Learning, Your Keywords}
+
+\vskip 0.3in %% default: \vskip21.681pt
+
+% Optional: Add a figure before the abstract if needed
+% \begin{figure}[H]
+%     \centering
+%     \vspace{-20pt}
+%     \includegraphics[width=0.865\linewidth]{figures/your_figure}
+%     \vspace{-8pt}
+%     \captionof{figure}{Your figure caption here describing the main contribution or overview.}
+%     \label{fig:overview}
+% \end{figure}
+
+\begin{multicols}{2}  % Hank Hack
+
+\printAffiliationsAndNotice{} % otherwise use the standard text.
+
+
+\input{chapters/abstract}
+\input{chapters/introduction}
+\input{chapters/method}
+\input{chapters/experiments}
+\input{chapters/related_works}
+\input{chapters/conclusion}
+\newpage
+\input{chapters/acknowledgements}
+\input{chapters/impact_statement}
+
+\bibliography{main}
+\bibliographystyle{icml2025}
+
+\end{multicols}
+\newpage
+\onecolumn
+
+% ========================================
+% APPENDIX
+% ========================================
+\appendix
+% Include your appendix sections here
+% Uncomment the ones you need and add your own
+
+\input{chapters/appendix/additional_results}
+\input{chapters/appendix/implementation}
+\input{chapters/appendix/proofs}
+
+% Additional appendix sections you might need:
+% \input{chapters/appendix/dataset_details}
+% \input{chapters/appendix/additional_ablations}
+% \input{chapters/appendix/qualitative_examples}
+% \input{chapters/appendix/limitations}
+% \input{chapters/appendix/broader_impact}
+
+\end{document}
