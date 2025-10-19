@@ -148,92 +148,6 @@ make clean
 make clean all
 ```
 
-## Working with Claude Code
-
-This template is optimized for use with Claude Code. You can ask Claude to:
-
-### Writing Assistance
-- "Help me write the introduction for a paper about [topic]"
-- "Expand this paragraph to explain [concept] more clearly"
-- "Suggest improvements to make this section more concise"
-
-### Finding References
-- "Find recent papers on [topic] and add citations to my bibliography"
-- "Search for papers about [specific method] published after 2022"
-- "Add BibTeX entries for foundational works in [area]"
-
-Note: Your global CLAUDE.md includes instructions for Claude to always search the web for the latest BibTeX references.
-
-### Organization and Structure
-- "Create a table showing my experimental results"
-- "Generate TikZ code for a flowchart of my method"
-- "Help me organize my related work section by research themes"
-
-### Technical Tasks
-- "Set up my author list and affiliations"
-- "Create placeholder sections for missing content"
-- "Check for broken references and labels"
-
-## Conference-Specific Instructions
-
-### ICML (Included)
-
-This template uses ICML 2025 format by default.
-
-```latex
-\usepackage[accepted]{icml2025}  % Accepted version
-% \usepackage{icml2025}           % Submission version (anonymous)
-```
-
-### Adapting to Other Conferences
-
-**NeurIPS**: Replace `icml2025.sty` with `neurips_2024.sty`
-```latex
-\usepackage[final]{neurips_2024}
-```
-
-**ICLR**: Replace with `iclr2025_conference.sty`
-```latex
-\usepackage{iclr2025_conference}
-```
-
-**ACL/EMNLP**: Replace with `acl.sty`
-```latex
-\usepackage[hyperref]{acl}
-```
-
-**CVPR**: Replace with `cvpr.sty`
-```latex
-\usepackage{cvpr}
-```
-
-Download style files from the conference website and update the `\usepackage` statement in `main.tex`.
-
-## Tips and Best Practices
-
-### LaTeX Best Practices
-
-1. **Use labels consistently**: `\label{sec:intro}`, `\label{fig:overview}`, `\label{tab:results}`
-2. **Reference correctly**: Use `\ref{}`, `\cite{}`, `\eqref{}` for numbers
-3. **Use cleveref**: `\cref{sec:intro}` automatically adds "Section"
-4. **Vector graphics**: Always use PDF for plots and diagrams
-5. **booktabs tables**: Use `\toprule`, `\midrule`, `\bottomrule`
-
-### Writing Tips
-
-1. **Clear contributions**: Enumerate your contributions explicitly
-2. **Figure quality**: Make sure all text in figures is readable
-3. **Reproducibility**: Include sufficient implementation details
-4. **Citation style**: Use `\citep{}` for parenthetical, `\citet{}` for textual
-5. **Math notation**: Define notation clearly and use consistently
-
-### Claude Code Integration
-
-1. **Iterative writing**: Ask Claude to draft sections, then refine them
-2. **Literature search**: Use Claude's web search to find relevant papers
-3. **Code generation**: Ask for TikZ diagrams, tables, or formatting help
-4. **Proofreading**: Request improvements for clarity and conciseness
-
 ## Common Commands
 
 ### Document Layout
@@ -265,29 +179,6 @@ Download style files from the conference website and update the `\usepackage` st
 - `\etal`: et al.
 - `\wrt`: w.r.t.
 
-## Troubleshooting
-
-### LaTeX won't compile
-1. Check for missing closing braces `}`, brackets `]`, or `\end{environment}`
-2. Look at the error message location (line number)
-3. Ensure all referenced labels exist
-4. Run `make clean` and rebuild
-
-### References not showing
-1. Run: `pdflatex main.tex` → `bibtex main` → `pdflatex main.tex` → `pdflatex main.tex`
-2. Or just use `make` which handles this automatically
-3. Check that citations match keys in `main.bib`
-
-### Figures not appearing
-1. Ensure file path is correct (no file extension in `\includegraphics`)
-2. Check figure format (PDF, PNG, JPG are recommended)
-3. Verify file exists in `figures/` directory
-
-### Overleaf users
-1. Upload all files maintaining the directory structure
-2. Set `main.tex` as the main document
-3. Overleaf handles compilation automatically
-
 ## Version Control
 
 Initialize a git repository to track changes:
@@ -300,24 +191,10 @@ git commit -m "Initial commit: research paper template"
 
 The `.gitignore` is already configured to exclude build artifacts.
 
-## License
-
-This template is provided as-is for academic and research use. Modify as needed for your work.
-
 ## Contributing
 
 Improvements and suggestions welcome! This template is designed to evolve with best practices in academic writing and tooling.
 
-## Resources
-
-- **LaTeX Documentation**: https://www.latex-project.org/help/documentation/
-- **Overleaf Guides**: https://www.overleaf.com/learn
-- **TikZ & PGF**: https://tikz.dev
-- **Booktabs Package**: https://ctan.org/pkg/booktabs
-- **Claude Code**: https://docs.claude.com/claude-code
-
 ---
 
 **Happy writing! 🚀**
-
-For questions or issues, ask Claude Code for help - it's designed to assist with all aspects of paper writing using this template.

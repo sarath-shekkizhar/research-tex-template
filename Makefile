@@ -34,22 +34,22 @@ all: $(MAIN).pdf
 
 # Full compilation with bibliography
 $(MAIN).pdf: $(MAIN).tex $(wildcard chapters/*.tex) $(wildcard chapters/appendix/*.tex) $(MAIN).bib
-	@echo "========================================
+	@echo "========================================"
 	@echo "Compiling $(MAIN).tex (first pass)..."
 	@echo "========================================"
 	$(TEX) $(TEXFLAGS) $(MAIN).tex
 	@echo ""
-	@echo "========================================
+	@echo "========================================"
 	@echo "Running BibTeX..."
 	@echo "========================================"
 	$(BIB) $(MAIN)
 	@echo ""
-	@echo "========================================
+	@echo "========================================"
 	@echo "Compiling $(MAIN).tex (second pass)..."
 	@echo "========================================"
 	$(TEX) $(TEXFLAGS) $(MAIN).tex
 	@echo ""
-	@echo "========================================
+	@echo "========================================"
 	@echo "Compiling $(MAIN).tex (final pass)..."
 	@echo "========================================"
 	$(TEX) $(TEXFLAGS) $(MAIN).tex
